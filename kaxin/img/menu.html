@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>kaixin</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png" >
+        </div> 
+        <ul class="nav-link">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <div class="menu">
+        <div class="bandMenu">
+            <h1>Menu</h1>
+        </div>
+
+        <ul class="navMenu">
+            <li>
+                <button class="popup-button" onclick="openPopup()">Store</button>
+
+                <div class="popup-container" id="popupContainer">
+                    <div class="popup-content">
+                        <button class="close-button" onclick="closePopup()">&times;</button>
+                        <div class="popup-header">Popup Title</div>
+                        <div class="popup-body">
+                            This is the popup content. You can put any HTML content here.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="popup-button" onclick="openPopup()">FeedBack</button>
+
+                <div class="popup-container" id="popupContainer">
+                    <div class="popup-content">
+                        <button class="close-button" onclick="closePopup()">&times;</button>
+                        <div class="popup-header">Popup Title</div>
+                        <div class="popup-body">
+                            This is the popup content. You can put any HTML content here.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="popup-button" onclick="openPopup()">Order</button>
+
+                <div class="popup-container" id="popupContainer">
+                    <div class="popup-content">
+                        <button class="close-button" onclick="closePopup()">&times;</button>
+                        <div class="popup-header">Popup Title</div>
+                        <div class="popup-body">
+                            This is the popup content. You can put any HTML content here.
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search-container">
+        <form class="search-bar" onsubmit="handleSearch(event)">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <input 
+                type="search" 
+                class="search-input" 
+                placeholder="Search..."
+                aria-label="Search"
+            >
+            <button type="button" class="clear-button" onclick="clearSearch(this)">
+                <svg class="clear-icon" viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3 class="filter-title">Dish type</h3>
+                <button class="filter-button" data-category="set">Value Set</button>
+                <button class="filter-button" data-category="malatang-diy">Malatang DIY</button>
+                <button class="filter-button" data-category="signature">Kaixin Signature Malatang</button>
+                <button class="filter-button" data-category="noodles">Wok Spicy Malatang</button>
+                <button class="filter-button" data-category="desserts">Noodle & Rice set</button>
+                <button class="filter-button" data-category="combo">Combo</button>
+                <button class="filter-button" data-category="side-dishes">Side Dishes</button>
+                <button class="filter-button" data-category="soft-drink">Soft Drink</button>
+            </div>
+        </aside>
+    
+        <main class="main-content">
+            <!-- DIY Malatang Section -->
+            <div class="recipe-section" id="malatang-diy-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="malatang-diy">
+                        <img src="img/diymala.jpeg" alt="DIY Malatang" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">DIY Malatang</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Customize</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="malatang-diy">
+                        <img src="img/extra.png" alt="DIY Malatang" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Extra</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Extra ingredients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+    
+            <!-- Signature Malatang Section -->
+            <div class="recipe-section" id="signature-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="signature beef">
+                        <img src="img/signaturedry.png" alt="Beef Malatang" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Kaixin Signature Dry Malatang</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Beef</span>
+                                <span class="tag">Chicken</span>
+                                <span class="tag">Pork</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="recipe-card" data-categories="signature seafood">
+                        <img src="img/signaturesoup.png" alt="Seafood Malatang" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Kaixin Signature Malatang Soup</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Signature</span>
+                                <span class="tag">Seafood</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Noodles Section -->
+            <div class="recipe-section" id="noodles-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="noodles beef">
+                        <img src="img/drymalatang.jpg" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Wok Spicy Malatang</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Best Seller</span>
+                                <p>$5.80</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Desserts Section -->
+            <div class="recipe-section" id="desserts-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="desserts">
+                        <img src="img/noodle.png" alt="Sweet Dessert" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Sichuan Noodles</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Pork</span>
+                                <span class="tag">Garlic</span>
+                                <span class="tag">Peanuts</span>
+                                <p>$3.80</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="desserts">
+                        <img src="img/belly.png" alt="Sweet Dessert" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Braised Pork Belly Rice Bowl</h3>
+                            <div class="recipe-tags">
+                                <span class="tag">Pork</span>
+                                <p>$4.90</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Combo-->
+            <div class="recipe-section" id="combo-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="desserts">
+                        <img src="img/singlecombo.png" alt="Sweet Dessert" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Single Combo</h3>
+                            <div class="recipe-tags">
+                                <p>$1.40++</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="desserts">
+                        <img src="img/couplecombo.png" alt="Sweet Dessert" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Couple Combo</h3>
+                            <div class="recipe-tags">
+                                <p>$2.00++</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Set Malatang Section -->
+            <div class="recipe-section" id="set-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/set1.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Value set 1</h3>
+                            <div class="recipe-tags">
+                                <p>$8.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/set2.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Value set 2</h3>
+                            <div class="recipe-tags">
+                                <p>$8.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/set3.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Value set 3</h3>
+                            <div class="recipe-tags">
+                                <p>$8.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--combo section-->
+            <div class="recipe-section" id="sideDishes-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/dumpling.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Sichuan Pork Dumpings</h3>
+                            <div class="recipe-tags">
+                                <p>$1.60</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/friedchicken.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Deep Fried Chicken Wings</h3>
+                            <div class="recipe-tags">
+                                <p>$1.90</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/crispypork.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Deep Fried Crispy Pork</h3>
+                            <div class="recipe-tags">
+                                <p>$2.10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/rice.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Steamed Rice</h3>
+                            <div class="recipe-tags">
+                                <p>$0.80</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/halfrice.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Half Steamed Rice</h3>
+                            <div class="recipe-tags">
+                                <p>$0.45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--soft drink section-->
+            <div class="recipe-section" id="softDrink-section">
+                <div class="recipe-grid">
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/vital.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Vital Water</h3>
+                            <div class="recipe-tags">
+                                <p>$1.10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/coca.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Coca-Cola Classic</h3>
+                            <div class="recipe-tags">
+                                <p>$1.10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/jaiDuoBao.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Jia Duo Bao</h3>
+                            <div class="recipe-tags">
+                                <p>$1.30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/oolongtea.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Peach Oolong Tea</h3>
+                            <div class="recipe-tags">
+                                <p>$2.10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card" data-categories="set">
+                        <img src="img/blacktea.png" alt="Beef Noodles" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3 class="recipe-title">Lemon Black Tea</h3>
+                            <div class="recipe-tags">
+                                <p>$2.10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="decorative-element">♥</div>
+        <p>© By ChealyChao</p>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>
